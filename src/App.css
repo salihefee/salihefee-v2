@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+/* :root {
+  --bg: #0f0a0d;
+  --bg2: #160d12;
+  --bg3: #1e1118;
+  --pink: #f472b6;
+  --pink2: #ec4899;
+  --text: #fce7f3;
+  --textsub: #c9a0b4;
+  --white: #ffffff;
+  --border: #2d1a24;
+  --dim: var(--textsub);
+  --font-d: 'DM Serif Display', Georgia, serif;
+  --font-m: 'DM Mono', monospace;
+  --font-s: 'DM Sans', sans-serif;
+} */
+
+:root {
+  --bg: #050a10;
+  --bg2: #0b141f;
+  --bg3: #121e2e;
+  --pink: #38bdf8;
+  --pink2: #0ea5e9;
+  --text: #f0f9ff;
+  --textsub: #94a3b8;
+  --white: #ffffff;
+  --font-d: 'DM Serif Display', Georgia, serif;
+  --font-m: 'DM Mono', monospace;
+  --font-s: 'DM Sans', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-s);
+  margin: 0;
+  min-height: 100vh;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 140px 24px;
+}
+
+.eyebrow {
+  font-family: var(--font-m);
+  font-size: 10px;
+  letter-spacing: .2em;
+  color: var(--pink);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block
+}
+
+.name-header {
+  font-family: var(--font-d);
+  font-size: clamp(3.5rem, 12vw, 5.5rem);
+  line-height: 0.9;
+  font-style: italic;
+  margin: 0 0 24px 0;
+}
+
+.name-first {
+  color: var(--white);
+  display: block;
+}
+
+.name-last {
+  color: var(--pink);
+  display: block;
+}
+
+.title-sub {
+  font-family: var(--font-m);
+  color: var(--textsub);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+}
+
+.bio-section {
+  margin: 48px 0;
+  color: var(--textsub);
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.socials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+#socials {
+  margin-bottom: 48px;
+}
+
+.social-card {
+  background: var(--bg2);
+  border: 1px solid #2d1a24;
+  padding: 24px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-card:not(.disabled-button):hover {
+  background: var(--bg3);
+  border-color: var(--pink);
+  transform: translateY(-2px);
+}
+
+.social-service {
+  font-family: var(--font-m);
+  color: var(--pink);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.social-account {
+  font-family: var(--font-d);
+  color: var(--text);
+  font-size: 1.3rem;
+  font-style: italic;
+}
+
+.disabled-button {
+  opacity: 0.4;
+  cursor: not-allowed;
+  filter: grayscale(1);
+}
+
+.scale-animation {
+  animation: tap-shrink 0.2s ease-in-out;
+}
+
+@keyframes tap-shrink {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.98);
+  }
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 12px;
+}
+
+.project-card {
+  background: var(--bg2);
+  border: 1px solid #2d1a24;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+  background: var(--bg3);
+  border-color: var(--pink);
+  transform: translateY(-2px);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.project-title {
+  font-family: var(--font-d);
+  color: var(--text);
+  font-size: 1.3rem;
+  font-style: italic;
+  margin: 0;
+}
+
+.project-lang {
+  font-family: var(--font-m);
+  color: var(--pink);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.project-desc {
+  color: var(--textsub);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 12px 0;
+}
+
+.project-date {
+  font-family: var(--font-m);
+  color: var(--textsub);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+footer {
+  padding: 70px 36px;
+  text-align: center;
+  border-top: 1px solid var(--border)
+}
+
+.footer-text {
+  font-family: var(--font-m);
+  font-size: 9px;
+  letter-spacing: .2em;
+  color: var(--dim);
+  text-transform: uppercase
+}
