@@ -1,33 +1,8 @@
-import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Socials from './components/Socials';
 import Projects from './components/Projects';
 import './App.css';
-
-const SocialButton = ({ service, account, url, disabled }) => {
-  const [isShaking, setIsShaking] = useState(false);
-
-  const handleClick = (e) => {
-    if (disabled) {
-      e.preventDefault();
-      setIsShaking(true);
-      setTimeout(() => setIsShaking(false), 300);
-    }
-  };
-
-  return (
-    <a
-      href={disabled ? '#' : url}
-      onClick={handleClick}
-      className={`social-card ${disabled ? 'disabled-button' : ''} ${isShaking ? 'scale-animation' : ''}`}
-      target={disabled ? '_self' : '_blank'}
-      rel="noreferrer"
-    >
-      <span className="social-service">{service}</span>
-      <span className="social-account">{account}</span>
-    </a>
-  );
-};
 
 function App() {
   const calculateAge = () => {
@@ -54,12 +29,12 @@ function App() {
   ];
 
   const projects = [
-    { title: 'BadAppleMinecraft', lang: 'Java, Bukkit', desc: 'A Minecraft plugin that plays the Bad Apple!! music video (or any video you want).', date: 'Jan 23, 2024' },
-    { title: 'spectacle-autoimgur', lang: 'C, libcurl', desc: 'A program that will watch the screenshots folder and upload any new images to Imgur.', date: 'Jan 21, 2025' },
-    { title: 'MapDownloader', lang: 'C#', desc: 'A "proxy" that will intercept links to the browser and download if they are osu! beatmaps. My first actual project.', date: 'Aug 11, 2023' },  
-    { title: 'MineStorage', lang: 'Java, Bukkit', desc: "A Minecraft plugin that will basically store files in a minecraft world by encoding them into blocks. A recreation of BK Binary's project.", date: 'Jan 28, 2024' },
-    { title: 'osu-rpc', lang: 'C#, DiscordRPC', desc: 'Shitcode that happens to be a better version of the osu! discord presence. Also one of my first projects. Obviously.  ', date: 'Sep 6, 2023' },
-    { title: 'c-raycaster', lang: 'C, raylib', desc: 'My first C project, also the worst C raycaster ever. Run it for more than 2 minutes and run out of memory.', date: 'Feb 1, 2024' }
+    { title: 'BadAppleMinecraft', lang: 'Java, Bukkit', desc: 'A Minecraft plugin that plays the Bad Apple!! music video (or any video you want).', date: 'Jan 23, 2024', projectLink: 'https://github.com/salihefee/BadAppleMinecraft' },
+    { title: 'spectacle-autoimgur', lang: 'C, libcurl', desc: 'A program that will watch the screenshots folder and upload any new images to Imgur.', date: 'Jan 21, 2025', projectLink: 'https://github.com/salihefee/spectacle-autoimgur' },
+    { title: 'MapDownloader', lang: 'C#', desc: 'A "proxy" that will intercept links to the browser and download if they are osu! beatmaps. My first actual project.', date: 'Aug 11, 2023', projectLink: 'https://github.com/salihefee/MapDownloader' },
+    { title: 'MineStorage', lang: 'Java, Bukkit', desc: "A Minecraft plugin that will basically store files in a minecraft world by encoding them into blocks. A recreation of BK Binary's project.", date: 'Jan 28, 2024', projectLink: 'https://github.com/salihefee/MineStorage' },
+    { title: 'osu-rpc', lang: 'C#, DiscordRPC', desc: 'Shitcode that happens to be a better version of the osu! discord presence. Also one of my first projects. Obviously.', date: 'Sep 6, 2023', projectLink: 'https://github.com/salihefee/osu-rpc' },
+    { title: 'c-raycaster', lang: 'C, raylib', desc: 'My first C project, also the worst C raycaster ever. Run it for more than 2 minutes and run out of memory.', date: 'Feb 1, 2024', projectLink: 'https://github.com/salihefee/c-raycaster' },
   ];
 
   return (
@@ -76,6 +51,7 @@ function App() {
                 </h1>
                 <p className="title-sub">Programmer • {calculateAge()} • Turkey • Istanbul</p>
               </header>
+
               <section className="bio-section">
                 <p>I'm a beginner programmer based in Turkey. I'm interested in low-level concepts and inner workings of a computer.</p>
                 <p>I'm also interested in aviation and enjoy learning about aircraft systems and flight mechanics.</p>
@@ -83,11 +59,7 @@ function App() {
 
               <span className="eyebrow">01 • socials</span>
               <section id="socials">
-                <div className="socials-grid">
-                  {socialLinks.map((link) => (
-                    <SocialButton key={link.service} {...link} />
-                  ))}
-                </div>
+                <Socials socialLinks={socialLinks} />
               </section>
 
               <span className="eyebrow">02 • projects</span>
@@ -100,8 +72,8 @@ function App() {
         </Routes>
       </div>
       <footer className="sticky-footer">
-        <div class="wrap">
-          <p class="footer-text">salihefee · made with react · UTC+3</p>
+        <div className="wrap">
+          <p className="footer-text">salihefee · made with react · UTC+3</p>
         </div>
       </footer>
     </Router>
