@@ -1,56 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
-
-:root {
-  --bg: #050a10;
-  --bg2: #0b141f;
-  --bg3: #121e2e;
-  --accent: #38bdf8;
-  --accent2: #0ea5e9;
-  --text: #f0f9ff;
-  --textsub: #94a3b8;
-  --white: #ffffff;
-  --border: #1a2d3d;
-  --dim: var(--textsub);
-  --font-d: 'DM Serif Display', Georgia, serif;
-  --font-m: 'DM Mono', monospace;
-  --font-s: 'DM Sans', sans-serif;
-}
-
-[data-theme="pink"] {
-  --bg: #0f0a0d;
-  --bg2: #160d12;
-  --bg3: #1e1118;
-  --accent: #f472b6;
-  --accent2: #ec4899;
-  --text: #fce7f3;
-  --textsub: #c9a0b4;
-  --white: #ffffff;
-  --border: #2d1a24;
-  --dim: var(--textsub);
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--font-s);
-  margin: 0;
-  min-height: 100vh;
-}
-
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.4;
-}
-
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -68,47 +15,6 @@ body::after {
   transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.name-header {
-  font-family: var(--font-d);
-  font-size: clamp(3.5rem, 12vw, 5.5rem);
-  line-height: 0.9;
-  font-style: italic;
-  margin: 0 0 24px 0;
-}
-
-.name-first {
-  color: var(--white);
-  display: block;
-  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.name-last {
-  color: var(--accent);
-  display: block;
-  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.title-sub {
-  font-family: var(--font-m);
-  color: var(--textsub);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 0.9rem;
-  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.bio-section {
-  margin: 48px 0;
-  color: var(--textsub);
-  font-size: 1.15rem;
-  line-height: 1.7;
-  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-#socials {
-  margin-bottom: 48px;
-}
-
 .disabled-button {
   opacity: 0.4;
   cursor: not-allowed;
@@ -120,7 +26,6 @@ body::after {
 }
 
 @keyframes tap-shrink {
-
   0%,
   100% {
     transform: scale(1);
@@ -134,7 +39,7 @@ body::after {
 footer {
   padding: 70px 36px;
   text-align: center;
-  border-top: 1px solid var(--border)
+  border-top: 1px solid var(--border);
 }
 
 .footer-text {
@@ -142,5 +47,5 @@ footer {
   font-size: 9px;
   letter-spacing: .2em;
   color: var(--dim);
-  text-transform: uppercase
+  text-transform: uppercase;
 }

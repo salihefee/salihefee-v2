@@ -1,9 +1,14 @@
-import React from 'react';
-import './Projects.css';
+import React from "react";
+import "./Projects.css";
 
 const ProjectCard = ({ title, lang, desc, date, projectLink }) => {
   return (
-    <a href={projectLink} className="project-link" target="_blank" rel="noreferrer">
+    <a
+      href={projectLink}
+      className="project-link"
+      target="_blank"
+      rel="noreferrer"
+    >
       <div className="project-card">
         <div className="project-header">
           <h3 className="project-title">{title}</h3>

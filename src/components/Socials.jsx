@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import './Socials.css';
+import { useState } from "react";
+import "./Socials.css";
 
 const SocialCard = ({ service, account, url, disabled }) => {
   const [isShaking, setIsShaking] = useState(false);
@@ -14,10 +14,10 @@ const SocialCard = ({ service, account, url, disabled }) => {
 
   return (
     <a
-      href={disabled ? '#' : url}
+      href={disabled ? "#" : url}
       onClick={handleClick}
-      className={`social-card ${disabled ? 'disabled-button' : ''} ${isShaking ? 'scale-animation' : ''}`}
-      target={disabled ? '_self' : '_blank'}
+      className={`social-card ${disabled ? "disabled-button" : ""} ${isShaking ? "scale-animation" : ""}`}
+      target={disabled ? "_self" : "_blank"}
       rel="noreferrer"
     >
       <span className="social-service">{service}</span>
