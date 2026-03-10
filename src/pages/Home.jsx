@@ -98,7 +98,7 @@ function Home() {
 
       <section className="bio-section">
         <p>
-          I'm a beginner programmer based in Turkey. I'm interested in low-level
+          I'm a programmer based in Turkey. I'm interested in low-level
           concepts and inner workings of a computer.
         </p>
         <p>
