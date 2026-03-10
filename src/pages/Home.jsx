@@ -56,14 +56,14 @@ const projects = [
   {
     title: "osu-rpc",
     lang: "C#, DiscordRPC",
-    desc: "Shitcode that happens to be a better version of the osu! discord presence. Also one of my first projects. Obviously.",
+    desc: "A better version of the osu! discord presence. Also one of my first projects. Obviously.",
     date: "Sep 6, 2023",
     projectLink: "https://github.com/salihefee/osu-rpc",
   },
   {
     title: "c-raycaster",
     lang: "C, raylib",
-    desc: "My first C project, also the worst C raycaster ever. Run it for more than 2 minutes and run out of memory.",
+    desc: "My first C project, a simple raycaster. Also bundles a memory eater for FREE!",
     date: "Feb 1, 2024",
     projectLink: "https://github.com/salihefee/c-raycaster",
   },
