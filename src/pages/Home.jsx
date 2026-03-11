@@ -83,14 +83,19 @@ const calculateAge = () => {
   return age;
 };
 
-function Home() {
+function Home({theme, setTheme}) {
   return (
     <>
       <header>
-        <h1 className="name-header">
+        <div className="name-header">
           <span className="name-first">Salih Efe</span>
-          <span className="name-last">Ergür</span>
-        </h1>
+          <button
+            className="theme-toggle"
+            onClick={() => setTheme(theme === "pink" ? "blue" : "pink")}
+          >
+            <span className="name-last">Ergür</span>
+          </button>
+        </div>
         <p className="title-sub">
           Programmer • {calculateAge()} • Turkey • Istanbul
         </p>
@@ -98,8 +103,8 @@ function Home() {
 
       <section className="bio-section">
         <p>
-          I'm a programmer based in Turkey. I'm interested in low-level
-          concepts and inner workings of a computer.
+          I'm a programmer based in Turkey. I'm interested in low-level concepts
+          and inner workings of a computer.
         </p>
         <p>
           I'm also interested in aviation and enjoy learning about aircraft

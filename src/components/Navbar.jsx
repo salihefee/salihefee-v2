@@ -1,17 +1,7 @@
-import React, { useState, useEffect } from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import "./Navbar.css";
 
-const Navbar = ({ logoText = "nulliplex", links = [] }) => {
-  const [theme, setTheme] = useState(
-    () => localStorage.getItem("theme") || "blue",
-  );
-
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme === "pink" ? "pink" : "";
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
+const Navbar = ({ logoText = "nulliplex", links = [], theme, setTheme }) => {
   return (
     <nav className="main-nav">
       <button
