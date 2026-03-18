@@ -20,6 +20,24 @@ function App() {
   }, [theme]);
 
 
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+      const tick = () => {
+            setTime(new Date());
+                const now = new Date();
+                    const msUntilNextMinute = (60 - now.getSeconds()) * 1000 - now.getMilliseconds();
+                        setTimeout(tick, msUntilNextMinute);
+      };
+
+        const msUntilNextMinute = (60 - new Date().getSeconds()) * 1000 - new Date().getMilliseconds();
+          const id = setTimeout(tick, msUntilNextMinute);
+
+            return () => clearTimeout(id);
+    }, []);
+      }
+  })
+
   return (
     <Router>
       <Navbar logoText="salihefee" links={navbarLinks} theme={theme} setTheme={setTheme} />
@@ -30,7 +48,7 @@ function App() {
       </div>
       <footer className="sticky-footer">
         <div className="wrap">
-          <p className="footer-text">salihefee · made with react · UTC+3</p>
+          <p className="footer-text">salihefee · made with react · {turkeyTime} UTC+3</p>
         </div>
       </footer>
     </Router>
