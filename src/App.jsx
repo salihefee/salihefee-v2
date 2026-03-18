@@ -23,20 +23,22 @@ function App() {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
-      const tick = () => {
-            setTime(new Date());
-                const now = new Date();
-                    const msUntilNextMinute = (60 - now.getSeconds()) * 1000 - now.getMilliseconds();
-                        setTimeout(tick, msUntilNextMinute);
-      };
+    const tick = () => {
+      setTime(new Date());
+      const msUntilNextMinute = 60000 - (Date.now() % 60000);
+      timer = setTimeout(tick, msUntilNextMinute);
+    };
 
-        const msUntilNextMinute = (60 - new Date().getSeconds()) * 1000 - new Date().getMilliseconds();
-          const id = setTimeout(tick, msUntilNextMinute);
+    let timer = setTimeout(tick, 60000 - (Date.now() % 60000));
+    return () => clearTimeout(timer);
+  }, []);
 
-            return () => clearTimeout(id);
-    }, []);
-      }
-  })
+  const turkeyTime = time.toLocaleTimeString("en-GB", {
+    timeZone: "Europe/Istanbul",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  });
 
   return (
     <Router>
