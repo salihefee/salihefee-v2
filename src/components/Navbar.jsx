@@ -11,8 +11,8 @@ const Navbar = ({ logoText = "nulliplex", links = [], theme, setTheme }) => {
         <span className="nav-logo">{logoText}</span>
       </button>
       <div className="nav-links">
-        {links.map((link, index) => (
-          <Link smooth key={index} to={link.href}>
+        {links.map((link) => (
+          <Link smooth key={link.href} to={link.href}>
             {link.label}
           </Link>
         ))}
