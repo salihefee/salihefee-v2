@@ -29,8 +29,8 @@ const SocialCard = ({ service, account, url, disabled }) => {
 const Socials = ({ socialLinks }) => {
   return (
     <div className="socials-grid">
-      {socialLinks.map((link, index) => (
-        <SocialCard key={index} {...link} />
+      {socialLinks.map((link) => (
+        <SocialCard key={link.service} {...link} />
       ))}
     </div>
   );

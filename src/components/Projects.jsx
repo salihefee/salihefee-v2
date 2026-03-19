@@ -1,4 +1,3 @@
-import React from "react";
 import "./Projects.css";
 
 const ProjectCard = ({ title, lang, desc, date, projectLink }) => {
@@ -24,8 +23,8 @@ const ProjectCard = ({ title, lang, desc, date, projectLink }) => {
 const Projects = ({ projects }) => {
   return (
     <div className="projects-grid">
-      {projects.map((project, index) => (
-        <ProjectCard key={index} {...project} />
+      {projects.map((project) => (
+        <ProjectCard key={project.title} {...project} />
       ))}
     </div>
   );

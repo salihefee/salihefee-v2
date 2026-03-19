@@ -48,7 +48,7 @@ function App() {
           <Route path="/" element={<Home theme={theme} setTheme={setTheme} />} />
         </Routes>
       </div>
-      <footer className="sticky-footer">
+      <footer>
         <div className="wrap">
           <p className="footer-text">salihefee · made with react · {turkeyTime} UTC+3</p>
         </div>
