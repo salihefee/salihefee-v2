@@ -4,12 +4,12 @@ import {
   Routes,
   Route,
   useLocation,
+  Link
 } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import Minecraft from "./pages/Minecraft/Minecraft";
 import "./App.css";
-import { Link } from "react-router-dom";
 
 function AppLayout({ theme, setTheme, turkeyTime }) {
   const location = useLocation();

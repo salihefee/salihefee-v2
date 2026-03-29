@@ -5,8 +5,8 @@ const JoinStep = ({ num, title, desc }) => {
     <div className="mc-step">
       <span className="mc-step-num">{num}</span>
       <div className="mc-step-content">
-        <p className="mc-step-title">{title}</p>
-        <p className="mc-step-desc">{desc}</p>
+        <div className="mc-step-title">{title}</div>
+        <div className="mc-step-desc">{desc}</div>
       </div>
     </div>
   );
