@@ -1,6 +1,5 @@
 import ServerDetails from "../../components/ServerDetails/ServerDetails";
 import HowToJoin from "../../components/HowToJoin/HowToJoin";
-import "./Minecraft.css";
 
 const serverDetails = [
   { label: "address", value: "mc.salihefeergur.com.tr" },

@@ -1,6 +1,5 @@
 import Socials from "../../components/Socials/Socials";
 import Projects from "../../components/Projects/Projects";
-import "./Home.css";
 
 const socialLinks = [
   {

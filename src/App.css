@@ -31,6 +31,43 @@
   transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.name-header {
+  font-family: var(--font-d);
+  font-size: clamp(3.5rem, 12vw, 5.5rem);
+  line-height: 0.9;
+  font-style: italic;
+  margin: 0 0 24px 0;
+}
+
+.name-first {
+  color: var(--white);
+  display: block;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.name-last {
+  color: var(--accent);
+  display: block;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.title-sub {
+  font-family: var(--font-m);
+  color: var(--textsub);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bio-section {
+  margin: 48px 0;
+  color: var(--textsub);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .disabled-button {
   opacity: 0.4;
   cursor: not-allowed;
