@@ -1,7 +1,8 @@
 import Socials from "../../components/Socials/Socials";
 import Projects from "../../components/Projects/Projects";
 import { calculateAge } from "../../utils/age";
-import { socialLinks, projects } from "../../data";
+import { projects } from "../../data/projects";
+import { socialLinks } from "../../data/socials";
 
 function Home({ theme, setTheme }) {
   return (
