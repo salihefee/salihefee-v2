@@ -9,9 +9,10 @@ import {
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import Minecraft from "./pages/Minecraft/Minecraft";
+import { ThemeProvider } from "./context/ThemeProvider";
 import "./App.css";
 
-function AppLayout({ theme, setTheme, turkeyTime }) {
+function AppLayout({ turkeyTime }) {
   const location = useLocation();
 
   const navbarLinks =
@@ -30,14 +31,8 @@ function AppLayout({ theme, setTheme, turkeyTime }) {
       <Navbar logoText="salihefee" links={navbarLinks} />
       <div className="container">
         <Routes>
-          <Route
-            path="/"
-            element={<Home theme={theme} setTheme={setTheme} />}
-          />
-          <Route
-            path="/mc"
-            element={<Minecraft theme={theme} setTheme={setTheme} />}
-          />
+          <Route path="/" element={<Home />} />
+          <Route path="/mc" element={<Minecraft />} />
         </Routes>
       </div>
       <footer>
@@ -56,15 +51,6 @@ function AppLayout({ theme, setTheme, turkeyTime }) {
 }
 
 function App() {
-  const [theme, setTheme] = useState(
-    () => localStorage.getItem("theme") || "blue"
-  );
-
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme === "pink" ? "pink" : "";
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -93,9 +79,11 @@ function App() {
   });
 
   return (
-    <Router>
-      <AppLayout theme={theme} setTheme={setTheme} turkeyTime={turkeyTime} />
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <AppLayout turkeyTime={turkeyTime} />
+      </Router>
+    </ThemeProvider>
   );
 }
 

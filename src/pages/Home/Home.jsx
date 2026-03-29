@@ -3,8 +3,11 @@ import Projects from "../../components/Projects/Projects";
 import { calculateAge } from "../../utils/age";
 import { projects } from "../../data/projects";
 import { socialLinks } from "../../data/socials";
+import { useTheme } from "../../hooks/useTheme";
 
-function Home({ theme, setTheme }) {
+function Home() {
+  const { theme, setTheme } = useTheme();
+
   return (
     <>
       <header>
