@@ -4,7 +4,7 @@ import {
   Routes,
   Route,
   useLocation,
-  Link
+  Link,
 } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
@@ -21,8 +21,8 @@ function AppLayout({ theme, setTheme, turkeyTime }) {
           { label: "join", href: "#how-to-join" },
         ]
       : [
-          { label: "socials", href: "#socials", },
-          { label: "projects", href: "#projects", },
+          { label: "socials", href: "#socials" },
+          { label: "projects", href: "#projects" },
         ];
 
   return (
@@ -68,15 +68,21 @@ function App() {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
-    let timer;
-    const tick = () => {
-      setTime(new Date());
-      const msUntilNextMinute = 60000 - (Date.now() % 60000);
-      timer = setTimeout(tick, msUntilNextMinute);
-    };
+    const tick = () => setTime(new Date());
 
-    timer = setTimeout(tick, 60000 - (Date.now() % 60000));
-    return () => clearTimeout(timer);
+    let interval;
+    const timeout = setTimeout(
+      () => {
+        tick();
+        interval = setInterval(tick, 60000);
+      },
+      60000 - (Date.now() % 60000)
+    );
+
+    return () => {
+      clearTimeout(timeout);
+      clearInterval(interval);
+    };
   }, []);
 
   const turkeyTime = time.toLocaleTimeString("en-GB", {

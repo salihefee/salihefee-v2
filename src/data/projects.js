@@ -1,0 +1,44 @@
+export const projects = [
+  {
+    title: "BadAppleMinecraft",
+    lang: "Java, Bukkit",
+    desc: "A Minecraft plugin that plays the Bad Apple!! music video (or any video you want).",
+    date: "Jan 23, 2024",
+    projectLink: "https://github.com/salihefee/BadAppleMinecraft",
+  },
+  {
+    title: "spectacle-autoimgur",
+    lang: "C, libcurl",
+    desc: "A program that will watch the screenshots folder and upload any new images to Imgur.",
+    date: "Jan 21, 2025",
+    projectLink: "https://github.com/salihefee/spectacle-autoimgur",
+  },
+  {
+    title: "MapDownloader",
+    lang: "C#",
+    desc: 'A "proxy" that will intercept links to the browser and download if they are osu! beatmaps. My first actual project.',
+    date: "Aug 11, 2023",
+    projectLink: "https://github.com/salihefee/MapDownloader",
+  },
+  {
+    title: "MineStorage",
+    lang: "Java, Bukkit",
+    desc: "A Minecraft plugin that will basically store files in a minecraft world by encoding them into blocks. A recreation of BK Binary's project.",
+    date: "Jan 28, 2024",
+    projectLink: "https://github.com/salihefee/MineStorage",
+  },
+  {
+    title: "osu-rpc",
+    lang: "C#, DiscordRPC",
+    desc: "A better version of the osu! discord presence. Also one of my first projects. Obviously.",
+    date: "Sep 6, 2023",
+    projectLink: "https://github.com/salihefee/osu-rpc",
+  },
+  {
+    title: "c-raycaster",
+    lang: "C, raylib",
+    desc: "My first C project, a simple raycaster. Also bundles a memory eater for FREE!",
+    date: "Feb 1, 2024",
+    projectLink: "https://github.com/salihefee/c-raycaster",
+  },
+];
