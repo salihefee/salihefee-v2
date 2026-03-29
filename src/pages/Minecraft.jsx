@@ -9,7 +9,7 @@ const serverDetails = [
   { label: "access", value: "Whitelist" },
 ];
 
-function Minecraft({theme, setTheme}) {
+function Minecraft({ theme, setTheme }) {
   return (
     <>
       <header>
@@ -20,7 +20,7 @@ function Minecraft({theme, setTheme}) {
             className="invisible-button"
             onClick={() => setTheme(theme === "pink" ? "blue" : "pink")}
           >
-          <span className="name-last">Server</span>
+            <span className="name-last">Server</span>
           </button>
         </div>
         <p className="title-sub">Private • Whitelisted • mc.salihefeergur.com.tr</p>

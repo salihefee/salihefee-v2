@@ -86,7 +86,7 @@ const calculateAge = () => {
   return age;
 };
 
-function Home({theme, setTheme}) {
+function Home({ theme, setTheme }) {
   return (
     <>
       <header>

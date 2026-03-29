@@ -10,13 +10,13 @@ function AppLayout({ theme, setTheme, turkeyTime }) {
 
   const navbarLinks = location.pathname === "/mc"
     ? [
-        { label: "info",  href: "#server-info",  external: false },
-        { label: "join",  href: "#how-to-join",  external: false },
-      ]
+      { label: "info", href: "#server-info", external: false },
+      { label: "join", href: "#how-to-join", external: false },
+    ]
     : [
-        { label: "socials",  href: "#socials",  external: false },
-        { label: "projects", href: "#projects", external: false },
-      ];
+      { label: "socials", href: "#socials", external: false },
+      { label: "projects", href: "#projects", external: false },
+    ];
 
   return (
     <>

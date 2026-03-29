@@ -1,12 +1,12 @@
 .invisible-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    -webkit-tap-highlight-color: transparent;
-    outline: none;
-    font: inherit;
-    text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  font: inherit;
+  text-decoration: none;
 }
 
 .container {
@@ -18,7 +18,7 @@
 .eyebrow {
   font-family: var(--font-m);
   font-size: 10px;
-  letter-spacing: .2em;
+  letter-spacing: 0.2em;
   color: var(--accent);
   text-transform: uppercase;
   margin-bottom: 12px;
@@ -56,7 +56,7 @@ footer {
 .footer-text {
   font-family: var(--font-m);
   font-size: 9px;
-  letter-spacing: .2em;
+  letter-spacing: 0.2em;
   color: var(--dim);
   text-transform: uppercase;
 }
