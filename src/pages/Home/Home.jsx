@@ -1,12 +1,13 @@
 import Socials from "../../components/Socials/Socials";
 import Projects from "../../components/Projects/Projects";
-import { calculateAge } from "../../utils/age";
 import { projects } from "../../data/projects";
 import { socialLinks } from "../../data/socials";
 import { useTheme } from "../../hooks/useTheme";
+import { useAge } from "../../hooks/useAge";
 
 function Home() {
   const { theme, setTheme } = useTheme();
+  const age = useAge();
 
   return (
     <>
@@ -21,7 +22,7 @@ function Home() {
           </button>
         </div>
         <p className="title-sub">
-          Programmer • {calculateAge()} • Turkey • Istanbul
+          Programmer • {age} • Turkey • Istanbul
         </p>
       </header>
 
