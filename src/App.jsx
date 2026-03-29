@@ -1,19 +1,14 @@
-import { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
-  Link,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation, Link } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import Minecraft from "./pages/Minecraft/Minecraft";
 import { ThemeProvider } from "./context/ThemeProvider";
+import { useTurkeyTime } from "./hooks/useTurkeyTime";
 import "./App.css";
 
-function AppLayout({ turkeyTime }) {
+function AppLayout() {
   const location = useLocation();
+  const turkeyTime = useTurkeyTime();
 
   const navbarLinks =
     location.pathname === "/mc"
@@ -51,37 +46,10 @@ function AppLayout({ turkeyTime }) {
 }
 
 function App() {
-  const [time, setTime] = useState(new Date());
-
-  useEffect(() => {
-    const tick = () => setTime(new Date());
-
-    let interval;
-    const timeout = setTimeout(
-      () => {
-        tick();
-        interval = setInterval(tick, 60000);
-      },
-      60000 - (Date.now() % 60000)
-    );
-
-    return () => {
-      clearTimeout(timeout);
-      clearInterval(interval);
-    };
-  }, []);
-
-  const turkeyTime = time.toLocaleTimeString("en-GB", {
-    timeZone: "Europe/Istanbul",
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false,
-  });
-
   return (
     <ThemeProvider>
       <Router>
-        <AppLayout turkeyTime={turkeyTime} />
+        <AppLayout />
       </Router>
     </ThemeProvider>
   );

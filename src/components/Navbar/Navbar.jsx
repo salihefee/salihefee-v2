@@ -1,7 +1,13 @@
-import { HashLink as Link } from "react-router-hash-link";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = ({ logoText, links = [] }) => {
+  const handleHashClick = (e, href) => {
+    e.preventDefault();
+    const id = href.replace("#", "");
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
   return (
     <nav className="main-nav">
       <Link className="invisible-button" to="/">
@@ -9,16 +15,13 @@ const Navbar = ({ logoText, links = [] }) => {
       </Link>
       <div className="nav-links">
         {links.map((link) => (
-          <Link
-            smooth
+          <a
             key={link.href}
-            to={link.href}
-            scroll={(el) =>
-              el.scrollIntoView({ behavior: "smooth", block: "center" })
-            }
+            href={link.href}
+            onClick={(e) => handleHashClick(e, link.href)}
           >
             {link.label}
-          </Link>
+          </a>
         ))}
       </div>
     </nav>
