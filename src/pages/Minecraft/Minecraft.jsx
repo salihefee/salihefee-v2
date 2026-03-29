@@ -26,8 +26,8 @@ function Minecraft() {
 
       <section className="bio-section">
         <p>
-          A private Paper server running 1.21.11 for friends. Has Simple Voice
-          Chat installed. No setup needed on your end, just the mod. Bedrock
+          A private Paper server running 1.21.11 for friends. Has Plasmo
+          Voice installed. No setup needed on your end, just the mod. Bedrock
           clients are also supported.
         </p>
         <p>

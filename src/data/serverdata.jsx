@@ -2,7 +2,7 @@ export const serverDetails = [
   { label: "address", value: "mc.salihefeergur.com.tr" },
   { label: "version", value: "1.21.11" },
   { label: "software", value: "Paper" },
-  { label: "voice chat", value: "Simple Voice Chat" },
+  { label: "voice chat", value: "Plasmo Voice" },
   { label: "protection", value: "Whitelist + AuthMeReloaded + CoreProtect" },
   { label: "bedrock access", value: "Geyser + Floodgate" },
 ];
@@ -16,7 +16,7 @@ export const serverSteps = [
   {
     num: "02",
     title: "Install voice chat (optional)",
-    desc: "Download the Simple Voice Chat mod for your loader. It auto-connects when you join. No config needed.",
+    desc: "Download the Plasmo Voice mod for your loader. It auto-connects when you join. No config needed.",
   },
   {
     num: "03",
