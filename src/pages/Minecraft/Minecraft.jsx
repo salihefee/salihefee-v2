@@ -1,5 +1,5 @@
-import ServerDetails from "../components/ServerDetails";
-import HowToJoin from "../components/HowToJoin";
+import ServerDetails from "../../components/ServerDetails/ServerDetails";
+import HowToJoin from "../../components/HowToJoin/HowToJoin";
 import "./Minecraft.css";
 
 const serverDetails = [

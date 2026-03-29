@@ -5,9 +5,9 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Minecraft from "./pages/Minecraft";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./pages/Home/Home";
+import Minecraft from "./pages/Minecraft/Minecraft";
 import "./App.css";
 import { Link } from "react-router-dom";
 
