@@ -1,35 +1,54 @@
-import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Minecraft from "./pages/Minecraft";
 import "./App.css";
+import { Link } from "react-router-dom";
 
 function AppLayout({ theme, setTheme, turkeyTime }) {
   const location = useLocation();
 
-  const navbarLinks = location.pathname === "/mc"
-    ? [
-      { label: "info", href: "#server-info", external: false },
-      { label: "join", href: "#how-to-join", external: false },
-    ]
-    : [
-      { label: "socials", href: "#socials", external: false },
-      { label: "projects", href: "#projects", external: false },
-    ];
+  const navbarLinks =
+    location.pathname === "/mc"
+      ? [
+          { label: "info", href: "#server-info", external: false },
+          { label: "join", href: "#how-to-join", external: false },
+        ]
+      : [
+          { label: "socials", href: "#socials", external: false },
+          { label: "projects", href: "#projects", external: false },
+        ];
 
   return (
     <>
       <Navbar logoText="salihefee" links={navbarLinks} />
       <div className="container">
         <Routes>
-          <Route path="/" element={<Home theme={theme} setTheme={setTheme} />} />
-          <Route path="/mc" element={<Minecraft theme={theme} setTheme={setTheme} />} />
+          <Route
+            path="/"
+            element={<Home theme={theme} setTheme={setTheme} />}
+          />
+          <Route
+            path="/mc"
+            element={<Minecraft theme={theme} setTheme={setTheme} />}
+          />
         </Routes>
       </div>
       <footer>
         <div className="wrap">
-          <p className="footer-text">salihefee · made with react · {turkeyTime} UTC+3</p>
+          <p className="footer-text">
+            salihefee · made with react ·{" "}
+            <Link className="invisible-button" to="/mc">
+              minecraft server
+            </Link>{" "}
+            · {turkeyTime} UTC+3
+          </p>
         </div>
       </footer>
     </>
@@ -38,7 +57,7 @@ function AppLayout({ theme, setTheme, turkeyTime }) {
 
 function App() {
   const [theme, setTheme] = useState(
-    () => localStorage.getItem("theme") || "blue",
+    () => localStorage.getItem("theme") || "blue"
   );
 
   useEffect(() => {

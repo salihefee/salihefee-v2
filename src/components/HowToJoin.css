@@ -1,0 +1,47 @@
+.mc-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mc-step {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.mc-step-num {
+  font-family: var(--font-m);
+  color: var(--accent);
+  font-size: 1.5rem;
+  opacity: 0.5;
+  line-height: 1;
+}
+
+.mc-step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mc-step-title {
+  font-family: var(--font-d);
+  font-size: 1.25rem;
+  color: var(--text);
+  margin: 0;
+}
+
+.mc-step-desc {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.mc-code {
+  background: var(--bg2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: var(--accent);
+}

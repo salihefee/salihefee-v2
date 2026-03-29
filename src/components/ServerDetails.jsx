@@ -1,7 +1,6 @@
 import "./ServerDetails.css";
 
 const ServerDetailCard = ({ label, value }) => {
-
   return (
     <div className="mc-info-card">
       <span className="mc-info-label">{label}</span>
@@ -10,11 +9,11 @@ const ServerDetailCard = ({ label, value }) => {
   );
 };
 
-const ServerDetails = ({ serverDetails }) => {
+const ServerDetails = ({ serverDetailsArray }) => {
   return (
     <div className="mc-info-grid">
-      {serverDetails.map((serverDetails) => (
-        <ServerDetailCard key={serverDetails.service} {...serverDetails} />
+      {serverDetailsArray.map((detail) => (
+        <ServerDetailCard key={detail.label} {...detail} />
       ))}
     </div>
   );
