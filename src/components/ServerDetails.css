@@ -1,0 +1,29 @@
+.mc-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.mc-info-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  padding: 24px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mc-info-label {
+  font-family: var(--font-m);
+  color: var(--accent);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.mc-info-value {
+  font-family: var(--font-d);
+  color: var(--text);
+  font-size: 1.3rem;
+  font-style: italic;
+}

@@ -93,7 +93,7 @@ function Home({theme, setTheme}) {
         <div className="name-header">
           <span className="name-first">Salih Efe</span>
           <button
-            className="theme-toggle"
+            className="invisible-button"
             onClick={() => setTheme(theme === "pink" ? "blue" : "pink")}
           >
             <span className="name-last">Ergür</span>

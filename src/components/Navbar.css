@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to bottom, black, transparent)
+    background: linear-gradient(to bottom, black, transparent);
 }
 
 .nav-logo {
