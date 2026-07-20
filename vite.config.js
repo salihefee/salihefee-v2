@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     allowedHosts: [
-      'code.salihefeergur.com.tr' // This tells Vite to trust your subdomain
+      'code.salihefeergur.com.tr',
     ]
   },
 })

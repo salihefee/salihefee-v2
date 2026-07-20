@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import Minecraft from "./pages/Minecraft/Minecraft";
@@ -33,11 +33,7 @@ function AppLayout() {
       <footer>
         <div className="wrap">
           <p className="footer-text">
-            salihefee · made with react ·{" "}
-            <Link className="invisible-button" to="/mc">
-              minecraft server
-            </Link>{" "}
-            · {turkeyTime} UTC+3
+            salihefee · made with react & assisted by claude · {turkeyTime} UTC+3
           </p>
         </div>
       </footer>
