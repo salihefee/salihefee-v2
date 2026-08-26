@@ -1,6 +1,3 @@
-import { Link } from "react-router-dom";
-import "./Navbar.css";
-
 const Navbar = ({ logoText, links = [] }) => {
   const handleHashClick = (e, href) => {
     e.preventDefault();
@@ -10,9 +7,9 @@ const Navbar = ({ logoText, links = [] }) => {
 
   return (
     <nav className="main-nav">
-      <Link className="invisible-button" to="/">
+      <a className="invisible-button" href="/">
         <span className="nav-logo">{logoText}</span>
-      </Link>
+      </a>
       <div className="nav-links">
         {links.map((link) => (
           <a

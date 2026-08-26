@@ -10,10 +10,6 @@
   text-decoration: none;
 }
 
-.glow {
-  text-shadow: 0 0 4px white;
-}
-
 .container {
   max-width: 800px;
   margin: 0 auto;

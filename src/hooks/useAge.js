@@ -1,17 +1,28 @@
 import { useState, useEffect } from "react";
 
-const birthDate = new Date("2007-09-19T00:00:00+03:00");
+const birthDate = { year: 2007, month: 9, day: 19 };
+
+const getIstanbulDate = (date = new Date()) => {
+  const parts = new Intl.DateTimeFormat("en", {
+    timeZone: "Europe/Istanbul",
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+  }).formatToParts(date);
+
+  return Object.fromEntries(
+    parts
+      .filter(({ type }) => type !== "literal")
+      .map(({ type, value }) => [type, Number(value)])
+  );
+};
 
 const getAge = () => {
-  const now = new Date();
-  const todayStr = now.toLocaleDateString("en-CA", {
-    timeZone: "Europe/Istanbul",
-  });
-  const [year, month, day] = todayStr.split("-").map(Number);
+  const { year, month, day } = getIstanbulDate();
 
-  let age = year - birthDate.getFullYear();
-  const monthDiff = month - (birthDate.getMonth() + 1);
-  if (monthDiff < 0 || (monthDiff === 0 && day < birthDate.getDate())) {
+  let age = year - birthDate.year;
+  const monthDiff = month - birthDate.month;
+  if (monthDiff < 0 || (monthDiff === 0 && day < birthDate.day)) {
     age--;
   }
   return age;
@@ -21,18 +32,21 @@ export const useAge = () => {
   const [age, setAge] = useState(getAge);
 
   useEffect(() => {
-    const now = new Date();
-    const istanbulMidnight = new Date(
-      now.toLocaleDateString("en-CA", { timeZone: "Europe/Istanbul" }) + "T00:00:00+03:00"
-    );
-    const msUntilMidnight = istanbulMidnight.getTime() + 86400000 - now.getTime();
+    const updateAtMidnight = () => {
+      const now = new Date();
+      const { year, month, day } = getIstanbulDate(now);
+      const nextMidnight = Date.UTC(year, month - 1, day + 1) - 3 * 60 * 60 * 1000;
 
-    const timeout = setTimeout(() => {
-      setAge(getAge());
-    }, msUntilMidnight);
+      return setTimeout(() => {
+        setAge(getAge());
+        timeout = updateAtMidnight();
+      }, nextMidnight - now.getTime());
+    };
+
+    let timeout = updateAtMidnight();
 
     return () => clearTimeout(timeout);
-  }, [age]);
+  }, []);
 
   return age;
 };

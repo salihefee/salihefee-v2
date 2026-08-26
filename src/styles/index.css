@@ -1,19 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
-
 :root {
   --bg: #050a10;
   --bg2: #0b141f;
   --bg3: #121e2e;
   --accent: #38bdf8;
-  --accent2: #0ea5e9;
   --text: #f0f9ff;
   --textsub: #94a3b8;
   --white: #ffffff;
   --border: #1a2d3d;
   --dim: var(--textsub);
-  --font-d: "DM Serif Display", Georgia, serif;
-  --font-m: "DM Mono", monospace;
-  --font-s: "DM Sans", sans-serif;
+  --font-d: var(--font-dm-serif-display), Georgia, serif;
+  --font-m: var(--font-dm-mono), monospace;
+  --font-s: var(--font-dm-sans), sans-serif;
 }
 
 [data-theme="pink"] {
@@ -21,7 +18,6 @@
   --bg2: #160d12;
   --bg3: #1e1118;
   --accent: #f472b6;
-  --accent2: #ec4899;
   --text: #fce7f3;
   --textsub: #c9a0b4;
   --white: #ffffff;

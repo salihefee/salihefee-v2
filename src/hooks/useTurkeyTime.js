@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 
 export const useTurkeyTime = () => {
-  const [time, setTime] = useState(new Date());
+  const [time, setTime] = useState(null);
 
   useEffect(() => {
     const tick = () => setTime(new Date());
+    tick();
 
     let interval;
     const timeout = setTimeout(
@@ -21,10 +22,10 @@ export const useTurkeyTime = () => {
     };
   }, []);
 
-  return time.toLocaleTimeString("en-GB", {
+  return time?.toLocaleTimeString("en-GB", {
     timeZone: "Europe/Istanbul",
     hour: "2-digit",
     minute: "2-digit",
     hour12: false,
-  });
+  }) ?? "--:--";
 };

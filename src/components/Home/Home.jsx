@@ -1,5 +1,5 @@
-import Socials from "../../components/Socials/Socials";
-import Projects from "../../components/Projects/Projects";
+import Socials from "../Socials/Socials";
+import Projects from "../Projects/Projects";
 import { projects } from "../../data/projects";
 import { socialLinks } from "../../data/socials";
 import { useTheme } from "../../hooks/useTheme";

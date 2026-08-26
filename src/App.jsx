@@ -1,39 +1,27 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+"use client";
+
 import Navbar from "./components/Navbar/Navbar";
-import Home from "./pages/Home/Home";
-import Minecraft from "./pages/Minecraft/Minecraft";
+import Home from "./components/Home/Home";
 import { ThemeProvider } from "./context/ThemeProvider";
 import { useTurkeyTime } from "./hooks/useTurkeyTime";
-import "./App.css";
 
 function AppLayout() {
-  const location = useLocation();
   const turkeyTime = useTurkeyTime();
-
-  const navbarLinks =
-    location.pathname === "/mc"
-      ? [
-          { label: "info", href: "#server-info" },
-          { label: "join", href: "#how-to-join" },
-        ]
-      : [
-          { label: "socials", href: "#socials" },
-          { label: "projects", href: "#projects" },
-        ];
+  const navbarLinks = [
+    { label: "socials", href: "#socials" },
+    { label: "projects", href: "#projects" },
+  ];
 
   return (
     <>
       <Navbar logoText="salihefee" links={navbarLinks} />
       <div className="container">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/mc" element={<Minecraft />} />
-        </Routes>
+        <Home />
       </div>
       <footer>
         <div className="wrap">
           <p className="footer-text">
-            salihefee · made with react & assisted by claude · {turkeyTime} UTC+3
+            salihefee · made with next.js & assisted by claude · {turkeyTime} UTC+3
           </p>
         </div>
       </footer>
@@ -44,9 +32,7 @@ function AppLayout() {
 function App() {
   return (
     <ThemeProvider>
-      <Router>
-        <AppLayout />
-      </Router>
+      <AppLayout />
     </ThemeProvider>
   );
 }

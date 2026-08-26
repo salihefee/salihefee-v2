@@ -1,24 +1,27 @@
 import { useState } from "react";
-import "./Socials.css";
 
 const SocialCard = ({ service, account, url, disabled }) => {
-  const [isShaking, setIsShaking] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const handleClick = () => {
-    if (disabled) {
-      setIsShaking(true);
-      setTimeout(() => setIsShaking(false), 300);
-    }
+    setIsAnimating(false);
+    requestAnimationFrame(() => setIsAnimating(true));
   };
 
-  const className = `social-card ${disabled ? "disabled-button" : ""} ${isShaking ? "scale-animation" : ""}`.trim();
+  const className = `social-card ${disabled ? "disabled-button" : ""} ${isAnimating ? "scale-animation" : ""}`.trim();
 
   if (disabled) {
     return (
-      <div className={className} onClick={handleClick} role="button" aria-disabled="true">
+      <button
+        type="button"
+        className={className}
+        onClick={handleClick}
+        onAnimationEnd={() => setIsAnimating(false)}
+        aria-disabled="true"
+      >
         <span className="social-service">{service}</span>
         <span className="social-account">{account}</span>
-      </div>
+      </button>
     );
   }
 

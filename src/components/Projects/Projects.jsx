@@ -1,5 +1,3 @@
-import "./Projects.css";
-
 const ProjectCard = ({ title, lang, desc, date, projectLink }) => {
   return (
     <a

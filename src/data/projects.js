@@ -1,5 +1,12 @@
 export const projects = [
   {
+    title: "yesam.org",
+    lang: "Next.js, Strapi",
+    desc: "The official website of the Yeditepe Center for Strategic Research, featuring articles, authors, and strategic research boards.",
+    date: "Aug 26, 2026",
+    projectLink: "https://yesam.org",
+  },
+  {
     title: "BadAppleMinecraft",
     lang: "Java, Bukkit",
     desc: "A Minecraft plugin that plays the Bad Apple!! music video (or any video you want).",
